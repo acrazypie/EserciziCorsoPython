@@ -113,15 +113,14 @@ def bocciabili(reg, soglia=6.0) -> list[str]:
     return bocciati
 
 
-"""
-def top_student(reg) -> tuple[str, float] | None:
+def top_studente(reg) -> tuple[str, float] | None:
     if not reg:
         return None
-    for (id, studente) in reg.items():
+    top_id: str = ""
+    top_media: float = -1.0
+    for id, studente in reg.items():
         media = media_studente(reg, id)
-        if media is not None:
-            top_id: str = id
+        if media is not None and media > top_media:
+            top_id = id
             top_media = media
-            break
-    return None 
-"""
+    return (top_id, top_media) if top_id else None
