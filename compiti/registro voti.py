@@ -51,7 +51,9 @@ registro = {
 }
 
 
-def aggiungi_studente(reg, id, nome, cognome, classe, corso) -> bool:
+def aggiungi_studente(
+    reg: dict, id: str, nome: str, cognome: str, classe: int, corso: str
+) -> bool:
     if id in reg:
         return False
     reg[id] = {
@@ -64,7 +66,7 @@ def aggiungi_studente(reg, id, nome, cognome, classe, corso) -> bool:
     return True
 
 
-def aggiungi_materia(reg, id, materia) -> bool:
+def aggiungi_materia(reg: dict, id: str, materia: str) -> bool:
     if id not in reg:
         return False
     if materia not in reg[id]["voti"]:
@@ -72,38 +74,45 @@ def aggiungi_materia(reg, id, materia) -> bool:
     return True
 
 
-def aggiungi_voto(reg, id, materia, voto: float) -> bool:
-    if id not in reg or materia not in reg[id]["voti"] or not (0 <= voto <= 10):
+def aggiungi_voti(reg: dict, id: str, materia: str, *voto: float) -> bool:
+    if id not in reg or materia not in reg[id]["voti"]:
         return False
-    reg[id]["voti"][materia].append(round(voto, 2))
+    for v in voto:
+        if not (0 <= v <= 10):
+            return False
+        reg[id]["voti"][materia].append(round(v, 2))
     return True
 
 
-def media_studente(reg, id) -> float | None:
+def media_studente(reg: dict, id: str) -> float | None:
     if id not in reg:
         return None
     voti = [voto for materie in reg[id]["voti"].values() for voto in materie]
     return round(sum(voti) / len(voti), 2) if voti else 0.0
 
 
-def media_materia_studente(reg, id, materia) -> float | None:
+def media_materia_studente(reg: dict, id: str, materia: str) -> float | None:
     if id not in reg or materia not in reg[id]["voti"]:
         return None
     voti = reg[id]["voti"][materia]
     return round(sum(voti) / len(voti), 2) if voti else 0.0
 
 
-def pagella(reg, id) -> dict[str, float] | None:
+def pagella(reg: dict, id: str) -> dict[str, float] | None:
     if id not in reg:
         return None
-    materia: str = reg[id]["voti"][0] if reg[id]["voti"] else ""
-    if materia == "":
+    voti = reg[id]["voti"]
+    if not voti:
         return None
-    media = media_materia_studente(reg, id, materia)
-    return {materia: media} if media is not None else None
+    pagella_dict = {}
+    for materia in voti:
+        media = media_materia_studente(reg, id, materia)
+        if media is not None:
+            pagella_dict[materia] = media
+    return pagella_dict
 
 
-def bocciabili(reg, soglia=6.0) -> list[str]:
+def bocciabili(reg: dict, soglia=6.0) -> list[str]:
     bocciati = []
     for id, info in reg.items():
         for materia, voti in info["voti"].items():
@@ -113,7 +122,7 @@ def bocciabili(reg, soglia=6.0) -> list[str]:
     return bocciati
 
 
-def top_studente(reg) -> tuple[str, float] | None:
+def top_studente(reg: dict) -> tuple[str, float] | None:
     if not reg:
         return None
     top_id: str = ""
@@ -124,3 +133,22 @@ def top_studente(reg) -> tuple[str, float] | None:
             top_id = id
             top_media = media
     return (top_id, top_media) if top_id else None
+
+
+# Esempi di utilizzo
+print("-------------- ESEMPI --------------")
+print("Aggiungi studente:", aggiungi_studente(registro, "s6", "Anna", "Verdi", 5, "A"))
+print("-----------------------------------")
+print("Aggiungi materia:", aggiungi_materia(registro, "s6", "Italiano"))
+print("-----------------------------------")
+print("Aggiungi voti:", aggiungi_voti(registro, "s6", "Italiano", 8, 7.5, 9))
+print("-----------------------------------")
+print("Media studente:", media_studente(registro, "s6"))
+print("-----------------------------------")
+print("Media di Italiano:", media_materia_studente(registro, "s6", "Italiano"))
+print("-----------------------------------")
+print("Pagella:", pagella(registro, "s6"))
+print("-----------------------------------")
+print("Bocciabili:", bocciabili(registro))
+print("-----------------------------------")
+print("Top studente:", top_studente(registro))
