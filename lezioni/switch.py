@@ -4,9 +4,13 @@ le varie operazioni vengono effettuate da funzioni diverse es somma(val1,val2) e
 Esegui l'operazione e stampa il risultato.
 """
 
-num1 = float(input("Scegli il primo numero: "))
-num2 = float(input("Scegli il secondo numero: "))
-operazione = input("Scegli l'operazione (+, -, *, /): ")
+try:
+    num1 = float(input("Scegli il primo numero: "))
+    num2 = float(input("Scegli il secondo numero: "))
+    operazione = input("Scegli l'operazione (+, -, *, /): ")
+except ValueError:
+    print("Errore: Input non valido. Assicurati di inserire numeri.")
+    exit()
 
 
 def somma(val1, val2):
@@ -22,7 +26,10 @@ def moltiplicazione(val1, val2):
 
 
 def divisione(val1, val2):
-    return val1 / val2 if val2 != 0 else "Errore: Divisione per zero"
+    try:
+        return val1 / val2
+    except ZeroDivisionError:
+        return "Errore: Divisione per zero non permessa."
 
 
 def default(val1, val2):
