@@ -7,3 +7,9 @@ except ValueError:
     print("Errore: Input non valido. Assicurati di inserire numeri.")
 except ZeroDivisionError:
     print("Errore: Divisione per zero non permessa.")
+except Exception as e:
+    print(f"Errore inaspettato: {e}")
+else:
+    print("Operazione completata con successo.")
+finally:
+    print("Operazione terminata.")
