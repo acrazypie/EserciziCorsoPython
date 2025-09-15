@@ -32,6 +32,7 @@ def default(val1, val2):
 # if-elif-else
 if operazione == "+":
     risultato = somma(num1, num2)
+    # risultato = num1 + num2 -> si vuole fare senza funzione
 elif operazione == "-":
     risultato = sottrazione(num1, num2)
 elif operazione == "*":
