@@ -157,6 +157,9 @@ def top_studente(reg: dict) -> tuple[str, float] | None:
     return (top_id, top_media) if top_id else None
 
 
+print_studente(registro, "s9")
+print("---------------------------")
+
 aggiungi_studente(registro, "s6", "Anna", "Verdi", 5, "A")
 print_studente(registro, "s6")
 
