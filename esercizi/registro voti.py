@@ -135,20 +135,19 @@ def top_studente(reg: dict) -> tuple[str, float] | None:
     return (top_id, top_media) if top_id else None
 
 
-# Esempi di utilizzo
-print("-------------- ESEMPI --------------")
+print("----------------------------")
 print("Aggiungi studente:", aggiungi_studente(registro, "s6", "Anna", "Verdi", 5, "A"))
-print("-----------------------------------")
+print("---------------------------")
 print("Aggiungi materia:", aggiungi_materia(registro, "s6", "Italiano"))
-print("-----------------------------------")
+print("---------------------------")
 print("Aggiungi voti:", aggiungi_voti(registro, "s6", "Italiano", 8, 7.5, 9))
-print("-----------------------------------")
+print("---------------------------")
 print("Media studente:", media_studente(registro, "s6"))
-print("-----------------------------------")
+print("---------------------------")
 print("Media di Italiano:", media_materia_studente(registro, "s6", "Italiano"))
-print("-----------------------------------")
+print("---------------------------")
 print("Pagella:", pagella(registro, "s6"))
-print("-----------------------------------")
+print("---------------------------")
 print("Bocciabili:", bocciabili(registro))
-print("-----------------------------------")
+print("---------------------------")
 print("Top studente:", top_studente(registro))

@@ -1,12 +1,16 @@
 x = int(input())
 y = int(input())
-s = x+y
-d = x-y
-m = x*y
-D = x/y
-Dr = x%y
+
+s = x + y
+d = x - y
+m = x * y
+D = x / y
+Dr = x % y
+
 max = x if x > y else y
+
 min = x if x < y else y
+
 print("La somma vale " + str(s))
 print("La differenza vale " + str(d))
 print("La moltiplicazione vale " + str(m))
