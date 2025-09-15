@@ -32,7 +32,6 @@ def default(val1, val2):
 # if-elif-else
 if operazione == "+":
     risultato = somma(num1, num2)
-    # risultato = num1 + num2 -> si vuole fare senza funzione
 elif operazione == "-":
     risultato = sottrazione(num1, num2)
 elif operazione == "*":
@@ -42,7 +41,7 @@ elif operazione == "/":
 else:
     risultato = default(num1, num2)
 
-# match-case
+# match
 match operazione:
     case "+":
         risultato = somma(num1, num2)
@@ -55,7 +54,7 @@ match operazione:
     case _:
         risultato = default(num1, num2)
 
-# dizionario di funzioni
+# dizionario
 operazioni = {"+": somma, "-": sottrazione, "*": moltiplicazione, "/": divisione}
 risultato = operazioni.get(operazione, default)(num1, num2)
 
