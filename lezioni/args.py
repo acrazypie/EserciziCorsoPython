@@ -12,4 +12,4 @@ def sottrazione(a: int, b: int, /) -> int:
 print(somma(1, 2, 3))
 print(somma(1, 2, 3, moltiplicatore=2))
 print(sottrazione(5, 3))
-sottrazione(5, a=3)  # Questo genererà un errore
+# sottrazione(5, a=3) -> Questo genererà un errore
