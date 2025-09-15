@@ -52,7 +52,7 @@ match operazione:
     case "/":
         risultato = divisione(num1, num2)
     case _:
-        risultato = "Operazione non valida"
+        risultato = default(num1, num2)
 
 # dizionario di funzioni
 operazioni = {"+": somma, "-": sottrazione, "*": moltiplicazione, "/": divisione}
