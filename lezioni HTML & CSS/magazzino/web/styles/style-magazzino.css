@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #191a1c;
+  --surface: #242629;
+  --muted: #6c7075;
+  --text: #e3e6eb;
+  --card: #2c2f33;
+  --primary: #4e94ce;
+  --primary-700: #325d83;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Futura", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+header nav {
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  width: 5rem;
+  text-align: right;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 20px;
+  align-content: right;
+  justify-content: right;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+header nav ul li {
+  margin-bottom: 10px;
+}
+
+header nav ul li a {
+  background: var(--primary);
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+header nav ul li a:hover {
+  background: var(--primary-700);
+  color: var(--text);
+}
+
+.magazzino-section {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.magazzino-section h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.magazzino-inputs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.magazzino-inputs input {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--muted);
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 200px;
+  background: var(--surface);
+  color: var(--text);
+  appearance: textfield;
+}
+.magazzino-inputs input::placeholder {
+  color: var(--muted);
+}
+
+.magazzino-operations {
+  list-style: none;
+  padding: 2rem 4rem;
+  border-radius: 8px;
+  width: 600px;
+  gap: 1rem;
+}
+
+.magazzino-operations button {
+  background: var(--primary);
+  color: var(--text);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  margin: 0.5rem;
+}
+.magazzino-operations button:hover {
+  background: var(--primary-700);
+  color: var(--text);
+}
+.magazzino-operations button:disabled {
+  background: var(--muted);
+  cursor: not-allowed;
+}
+
+.magazzino-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.magazzino-table tr,
+.magazzino-table th {
+  border: 1px solid var(--muted);
+  background: var(--card);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.magazzino-table th {
+  background: var(--surface);
+  font-weight: 600;
+  font-size: 1.1rem;
+  width: 50%;
+}
+
+.magazzino-table tbody {
+  font-size: 1rem;
+  color: var(--text);
+  tr td {
+    padding: 0.75rem 1rem;
+  }
+}
+
+.magazzino-table tbody tr:nth-child(even) {
+  background: var(--surface);
+}

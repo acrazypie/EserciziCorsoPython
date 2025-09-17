@@ -1,0 +1,88 @@
+<!-- 
+PAGINA MAGAZZINO
+
+Requirements
+- Sezione a lista dove mostra tutti i prodotti del magazzino (una tabella oppure un elenco)
+- Sezione operativa menu con button aggiungi nuovo prodotto, rimuovi prodotto , restock prodotto(ovvero aggiungiamo le scorte di un prodotto quindi aumentiamo la quantità disponibile)
+
+#Pagina Shop
+- una griglia 4x4 o 3x3 dei prodotti dove ogni prodotto avra nome, descrizione, prezzo e quantità disponibile e poi ci sara un input field affianco a un button compra per selezionare la quantità che si vuole acquistare
+- sulla destra o sinistra della pagina web mettiamo una side bar con l elenco del carello e poi facciamo un pulsante compra che succesivamente andra a sottrarre l unita dal magazzino
+ -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style-magazzino.css">
+    <link rel="script" href="./scripts/magazzino.js">
+    <title>Magazzino</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Magazzino</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./shop/index.html">Shop</a></li>
+                <li><a href="./index.html">Magazzino</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <section class="magazzino-section">
+            <h2>Gestione Magazzino</h2>
+            <div class="magazzino-inputs">
+                <input type="text" id="product-name" placeholder="Nome Prodotto">
+                <input type="text" id="product-description" placeholder="Descrizione Prodotto">
+                <input type="number" id="product-price" placeholder="Prezzo Prodotto">
+                <input type="number" id="product-quantity" placeholder="Quantità Prodotto">
+            </div>
+            <div class="magazzino-operations">
+                <button id="add-product-btn">Aggiungi Nuovo Prodotto</button>
+                <button id="remove-product-btn">Rimuovi Prodotto</button>
+                <button id="restock-product-btn">Restock Prodotto</button>
+            </div>
+            <table class="magazzino-table">
+                <thead>
+                    <tr>
+                        <th>Nome Prodotto</th>
+                        <th>Descrizione</th>
+                        <th>Prezzo</th>
+                        <th>Quantità Disponibile</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list">
+                    <!-- I prodotti verranno inseriti qui dinamicamente -->
+                     <tr>
+                        <td>Nome Prodotto</td>
+                        <td>Descrizione del prodotto.</td>
+                        <td>€XX.XX</td>
+                        <td>XX</td>
+                    </tr>
+                    <tr>
+                        <td>Nome Prodotto</td>
+                        <td>Descrizione del prodotto.</td>
+                        <td>€XX.XX</td>
+                        <td>XX</td>
+                    </tr>
+                    <tr>
+                        <td>Nome Prodotto</td>
+                        <td>Descrizione del prodotto.</td>
+                        <td>€XX.XX</td>
+                        <td>XX</td>
+                    </tr>
+                    <tr>
+                        <td>Nome Prodotto</td>
+                        <td>Descrizione del prodotto.</td>
+                        <td>€XX.XX</td>
+                        <td>XX</td>
+                    </tr>
+                    <!-- I prodotti verranno inseriti qui dinamicamente -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+</html>
