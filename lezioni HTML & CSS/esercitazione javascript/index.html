@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Basi di JavaScript</title>
+        <link rel="stylesheet" href="style.css" />
+        <script defer src="main.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Basi di JS + HTML</h1>
+            <button id="toggle-theme">🌗 Tema</button>
+        </header>
+
+        <section>
+            <h2>DOM & Eventi</h2>
+            <button id="hello-btn">Cliccami</button>
+            <p id="out">—</p>
+        </section>
+
+        <section>
+            <h2>Counter</h2>
+            <div class="counter">
+                <button id="dec">-</button>
+                <span id="count">0</span>
+                <button id="inc">+</button>
+                <button id="reset">Reset</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Form (validazione base)</h2>
+            <form id="signup">
+                <input type="email" id="email" placeholder="Email" required />
+                <input
+                    type="password"
+                    id="pwd"
+                    placeholder="Password (min 6)"
+                    required
+                    minlength="6"
+                />
+                <button>Registrati</button>
+            </form>
+            <p id="formMsg"></p>
+        </section>
+
+        <section>
+            <h2>Fetch API (random dog)</h2>
+            <img id="dog" alt="doggo" width="220" />
+            <div>
+                <button id="loadDog">Nuova foto 🐶</button>
+            </div>
+        </section>
+    </body>
+</html>

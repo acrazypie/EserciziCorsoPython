@@ -1,0 +1,63 @@
+:root {
+    --bg: #111;
+    --fg: #eee;
+    --card: #1c1c1c;
+    --accent: #4caf50;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+}
+header,
+section {
+    padding: 16px;
+}
+header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+}
+section {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    margin: 16px;
+}
+button {
+    cursor: pointer;
+    border: 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+#toggle-theme {
+    background: #222;
+    color: #fff;
+}
+.counter {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.dark {
+    background: var(--bg);
+    color: var(--fg);
+}
+.dark header,
+.dark section {
+    background: var(--card);
+    border-color: #2b2b2b;
+}
+.dark #toggle-theme {
+    background: var(--accent);
+    color: #fff;
+}
