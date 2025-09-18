@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+}
+header {
+    padding: 16px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+}
+main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 16px;
+}
+section {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+}
+
+.settings {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.settings input {
+    width: 80px;
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.timer {
+    text-align: center;
+}
+.status {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.clock {
+    font-size: 64px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 8px 0 16px;
+}
+
+.bar-wrap {
+    height: 12px;
+    width: 100%;
+    background: #f0f0f0;
+    border-radius: 999px;
+    overflow: hidden;
+}
+.bar {
+    height: 100%;
+    width: 0%;
+    background: #4caf50;
+    transition: width 0.2s ease;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 16px;
+}
+button {
+    cursor: pointer;
+    border: 0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #222;
+    color: #fff;
+}
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
