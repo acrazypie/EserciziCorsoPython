@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 
+# Riferimento nell'HTML
+# {{ url_for('static', filename='css/style.css') }}
 
 app = Flask(__name__)
 
